@@ -12,4 +12,9 @@ export class FooterComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  click(){
+    console.log("it working");
+
+  }
+
 }

@@ -1,0 +1,239 @@
+.hero-container {
+  width: 100%;
+  display: flex;
+  overflow: auto;
+  min-height: 100vh;
+  align-items: center;
+  flex-direction: column;
+}
+.hero-promotionalbutton {
+  width: 100%;
+  height: 764px;
+  display: flex;
+  padding: 0;
+  position: relative;
+  align-self: auto;
+  box-sizing: border-box;
+  align-items: center;
+  flex-shrink: 1;
+  border-color: transparent;
+  border-style: none;
+  border-width: 0;
+  margin-right: 0;
+  border-radius: 0px 0px 0px 0px;
+  margin-bottom: 0;
+  flex-direction: row;
+  justify-content: center;
+  background-color: rgba(242, 240, 255, 1);
+}
+.hero-sofapromotionalheader {
+  top: 39px;
+  left: 1041px;
+  width: 506px;
+  height: 689px;
+  display: flex;
+  padding: 0;
+  position: absolute;
+  align-self: auto;
+  box-sizing: border-box;
+  align-items: flex-start;
+  flex-shrink: 1;
+  border-color: transparent;
+  border-style: none;
+  border-width: 0;
+  border-radius: 0px 0px 0px 0px;
+  flex-direction: row;
+  justify-content: flex-start;
+  background-color: transparent;
+}
+.hero-group129 {
+  top: 0px;
+  left: 0px;
+  width: 506px;
+  height: 689px;
+  display: flex;
+  padding: 0;
+  position: absolute;
+  align-self: auto;
+  box-sizing: border-box;
+  align-items: flex-start;
+  flex-shrink: 1;
+  border-color: transparent;
+  border-style: none;
+  border-width: 0;
+  border-radius: 0px 0px 0px 0px;
+  flex-direction: row;
+  justify-content: flex-start;
+  background-color: transparent;
+}
+.hero-ellipse60 {
+  top: 0px;
+  left: 55px;
+  width: 651px;
+  height: 651px;
+  position: absolute;
+  box-sizing: border-box;
+  border-color: transparent;
+}
+.hero-ellipse61 {
+  top: 41px;
+  left: 0px;
+  width: 648px;
+  height: 648px;
+  position: absolute;
+  box-sizing: border-box;
+  border-color: transparent;
+}
+.hero-group130 {
+  top: 55px;
+  left: 557px;
+  width: 136.5619354248047px;
+  height: 138.49063110351562px;
+  display: flex;
+  padding: 0;
+  position: absolute;
+  align-self: auto;
+  box-sizing: border-box;
+  align-items: flex-start;
+  flex-shrink: 1;
+  border-color: transparent;
+  border-style: none;
+  border-width: 0;
+  border-radius: 0px 0px 0px 0px;
+  flex-direction: row;
+  justify-content: flex-start;
+  background-color: transparent;
+}
+.hero-vector14 {
+  top: 0px;
+  left: 0px;
+  width: 137px;
+  height: 138px;
+  position: absolute;
+  box-sizing: border-box;
+}
+.hero-text {
+  top: 42px;
+  left: 34.388427734375px;
+  color: rgb(255, 255, 255);
+  height: auto;
+  position: absolute;
+  font-size: 35px;
+  align-self: auto;
+  font-style: Bold Roman;
+  text-align: left;
+  font-family: Josefin Sans;
+  font-weight: 700;
+  line-height: 0%;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.hero-shell-shaped-armchair-pink-velvet-fabric-one-seater-sofafo {
+  top: 60px;
+  left: 10px;
+  width: 629px;
+  height: 629px;
+  position: absolute;
+  box-sizing: border-box;
+  border-color: transparent;
+}
+.hero-shopnowbutton {
+  top: 478px;
+  left: 375px;
+  width: 163px;
+  height: 50px;
+  display: flex;
+  padding: 0;
+  position: absolute;
+  align-self: auto;
+  box-sizing: border-box;
+  align-items: flex-start;
+  flex-shrink: 1;
+  border-color: transparent;
+  border-style: none;
+  border-width: 0;
+  border-radius: 0px 0px 0px 0px;
+  flex-direction: row;
+  justify-content: flex-start;
+  background-color: rgba(251, 46, 134, 1);
+}
+.hero-text1 {
+  top: 16px;
+  left: 40px;
+  color: rgba(255, 255, 255, 1);
+  height: auto;
+  position: absolute;
+  font-size: 17px;
+  align-self: auto;
+  font-style: SemiBold Roman;
+  text-align: left;
+  font-family: Josefin Sans;
+  font-weight: 600;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.hero-headertext {
+  top: 203px;
+  left: 375px;
+  width: 644px;
+  height: 248px;
+  display: flex;
+  padding: 0;
+  position: absolute;
+  align-self: auto;
+  box-sizing: border-box;
+  align-items: center;
+  flex-shrink: 1;
+  border-color: transparent;
+  border-style: none;
+  border-width: 0;
+  border-radius: 0px 0px 0px 0px;
+  flex-direction: row;
+  justify-content: center;
+  background-color: transparent;
+}
+.hero-text3 {
+  top: 192px;
+  color: var(--dl-color-default-subtextcolor);
+  height: auto;
+  position: absolute;
+  font-size: 16px;
+  align-self: auto;
+  font-style: Bold;
+  text-align: left;
+  font-family: Lato;
+  font-weight: 700;
+  line-height: 28px;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.hero-text4 {
+  font-size: 40px;
+  font-family: Roboto;
+  font-weight: 600;
+}
+.hero-text6 {
+  font-size: 40px;
+  font-style: normal;
+  font-family: Roboto;
+  font-weight: 600;
+}
+.hero-ellipse62 {
+  top: 503px;
+  left: 184px;
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  box-sizing: border-box;
+  border-color: transparent;
+}
+.hero-image32 {
+  top: 0px;
+  left: 70px;
+  width: 387px;
+  height: 387px;
+  position: absolute;
+  box-sizing: border-box;
+  border-color: transparent;
+}
