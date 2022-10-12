@@ -3,10 +3,10 @@
   <div class="h2-container">
     <span class="h2-text captiontitle"><span>Leatest Products</span></span>
     <div class="h2-group171">
-      <span class="h2-text02"><span>New Arrival</span></span>
-      <span class="h2-text04"><span>Best Seller</span></span>
-      <span class="h2-text06"><span>Featured</span></span>
-      <span class="h2-text08"><span>Special Offer</span></span>
+      <span (click)="leatest('new')" [ngClass]="leatedId=='new'?'h2-text02 h2-text-focus':'h2-text02 h2-text-default'"><span>New Arrival</span></span>
+      <span (click)="leatest('best')" [ngClass]="leatedId=='best'?'h2-text04 h2-text-focus':'h2-text04 h2-text-default'"><span>Best Seller</span></span>
+      <span (click)="leatest('featured')" [ngClass]="leatedId=='featured'?'h2-text06 h2-text-focus':'h2-text06 h2-text-default'"><span>Featured</span></span>
+      <span (click)="leatest('special')" [ngClass]="leatedId=='special'?'h2-text08 h2-text-focus':'h2-text08 h2-text-default'"><span>Special Offer</span></span>
     </div>
   </div>
 </div>
@@ -14,12 +14,12 @@
   class="d-flex flex-wrap justify-content-evenly"
   style="width: 80%; margin: auto"
 >
-  <div class="home-product-container" *ngFor="let item of [].constructor(6)">
-    <div class="home-product-component9">
+  <div class="home-product-container" *ngFor="let product of leatestProds">
+    <div class="home-product-component9" style="cursor: pointer" [routerLink]="['/product']">
       <div class="home-product-group137">
-        <span class="home-product-text"><span>Comfort Handy Craft</span></span>
-        <span class="home-product-text2"><span>$42.00</span></span>
-        <span class="home-product-text4"><span>$65.00</span></span>
+        <span class="home-product-text"><span>{{product.title.substring(0,26)}}</span></span>
+        <span class="home-product-text2"><span>${{product.price}}</span></span>
+        <span class="home-product-text4"><span>${{(product.price+(product.price*product.discountPercentage/100)).toFixed(2)}}</span></span>
         <img
           src="assets/playground_assets/line2i526-hhlc.svg"
           alt="Line2I526"
@@ -27,7 +27,7 @@
         />
         <div class="home-product-frame1"></div>
         <img
-          src="assets/playground_assets/image1166i526-oyvnu-300w.png"
+          [src]="product.thumbnail"
           alt="image1166I526"
           class="home-product-image1166"
         />
@@ -277,8 +277,8 @@
   <div class="unique-rectangle101">
     <div class="unique-uniquefeaturesofa">
       <div class="unique-group156">
-        <span class="unique-text"><span>B&amp;B Italian Sofa</span></span>
-        <span class="unique-text02"><span>$32.00</span></span>
+        <span class="unique-text"><span>{{productList[0].title}}</span></span>
+        <span class="unique-text02"><span>${{productList[0].price}}</span></span>
         <img
           alt="Ellipse655249"
           src="https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/0c57bd11-cbd8-46c9-a0f6-54790dd6c492/a1045547-2310-42a1-9895-038edec0d7cc?org_if_sml=1295"
@@ -303,35 +303,28 @@
         </span>
         <span class="unique-text09">
           <span>
-            All frames constructed with hardwood solids and laminates
+            {{productList[0].description}}
           </span>
         </span>
         <span class="unique-text11">
-          <span>Arms, backs and seats are structurally reinforced</span>
+          <span>{{productList[0].category}}</span>
         </span>
         <span class="unique-text13">
           <span>
             <span>
-              Reinforced with double wood dowels, glue, screw - nails corner
+              Discount {{productList[0].discountPercentage}}%
             </span>
-            <br />
-            <span>blocks and machine nails</span>
           </span>
         </span>
         <div class="unique-group153">
           <img
-            alt="Ellipse635250"
-            src="assets/playground_assets/ellipse635250-evrs.svg"
-            class="unique-ellipse63"
-          />
-          <img
             alt="HomeStylishClubSofaChairPleatedSofaArmchairwithGol5250"
-            src="https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/0c57bd11-cbd8-46c9-a0f6-54790dd6c492/aff98e08-a702-48d5-b175-e489766f7e0b?org_if_sml=1148507"
+            [src]="productList[0].thumbnail"
             class="unique-home-stylish-club-sofa-chair-pleated-sofa-armchairwith-gol"
           />
         </div>
       </div>
-      <button (click)="click()" class="unique-shopnowbutton">
+      <button class="unique-shopnowbutton">
         <div class="unique-group155">
           <span class="unique-text18"><span>Add To Cart</span></span>
         </div>
@@ -350,26 +343,26 @@
   class="d-flow flex-wrap justify-content-evenly"
   style="width: 78%; margin: auto"
 >
-  <div class="trend-component-container" *ngFor="let item of [].constructor(4)">
+  <div class="trend-component-container" *ngFor="let product of productList.slice(1)">
     <div class="trend-component-trendingproducts">
       <div class="trend-component-group2">
         <div class="trend-component-mask-group"></div>
       </div>
       <div class="trend-component-group25">
-        <span class="trend-component-text"><span>Cantilever chair</span></span>
+        <span class="trend-component-text"><span>{{product.title}}</span></span>
         <div class="trend-component-group23">
           <span class="trend-component-text2 pricecut">
-            <span>$42.00</span>
+            <span>${{(product.price+(product.price*product.discountPercentage/100)).toFixed(2)}}</span>
           </span>
-          <span class="trend-component-text4 caption\">
-            <span>$26.00</span>
+          <span class="trend-component-text4">
+            <span>${{product.price}}</span>
           </span>
         </div>
       </div>
       <div class="trend-component-boxforimage">
         <img
-          src="https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/0c57bd11-cbd8-46c9-a0f6-54790dd6c492/bfb6f10b-c970-42f3-a3fc-d7025fc79bf9?org_if_sml=123247"
-          alt="image1170I526"
+          [src]="product.thumbnail"
+          alt="Product Image"
           class="trend-component-image1170"
         />
       </div>
@@ -383,8 +376,8 @@
     <span class="discount-text01">
       <span>20% Discount Of All Products</span>
     </span>
-    <span class="discount-text03"><span>Eams Sofa Compact</span></span>
-    <div (click)="click()" class="discount-group157">
+    <span class="discount-text03"><span>You miss 100% of the shots you don’t take.</span></span>
+    <div class="discount-group157">
       <div class="discount-shopnowbutton">
         <div class="discount-group155"></div>
       </div>

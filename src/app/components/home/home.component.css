@@ -37,8 +37,14 @@
   justify-content: flex-start;
   background-color: transparent;
 }
-.h2-text02 {
+.h2-text-focus{
+  color: var(--dl-color-default-pink);
+}
+.h2-text-default{
   color: var(--dl-color-default-text);
+}
+.h2-text02 {
+  cursor: pointer;
   height: auto;
   position: absolute;
   font-size: 18px;
@@ -52,8 +58,8 @@
   text-decoration: none;
 }
 .h2-text04 {
+  cursor: pointer;
   left: 151px;
-  color: var(--dl-color-default-pink);
   height: auto;
   position: absolute;
   font-size: 18px;
@@ -67,8 +73,8 @@
   text-decoration: none;
 }
 .h2-text06 {
+  cursor: pointer;
   left: 295px;
-  color: var(--dl-color-default-text);
   height: auto;
   position: absolute;
   font-size: 18px;
@@ -82,8 +88,8 @@
   text-decoration: none;
 }
 .h2-text08 {
+  cursor: pointer;
   left: 425px;
-  color: var(--dl-color-default-text);
   height: auto;
   position: absolute;
   font-size: 18px;
@@ -1242,11 +1248,12 @@
 .unique-home-stylish-club-sofa-chair-pleated-sofa-armchairwith-gol {
   top: 0px;
   left: 49px;
-  width: 509px;
-  height: 550px;
+  width: 409px;
+  height: 450px;
   position: absolute;
   box-sizing: border-box;
   border-color: transparent;
+  border-radius: 5px;
 }
 .unique-shopnowbutton {
   top: 365px;
@@ -1450,7 +1457,7 @@
 }
 .trend-component-text2 {
   top: 1px;
-  left: 55px;
+  left: 50px;
   color: rgba(21, 24, 117, 0.30000001192092896);
   height: auto;
   position: absolute;

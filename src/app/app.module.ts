@@ -8,6 +8,10 @@ import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { HomeComponent } from './components/home/home.component';
 import { HomeHeroComponent } from './components/home-hero/home-hero.component';
+import { ErrorComponent } from './components/error/error.component';
+import { HeroComponent } from './components/hero/hero.component';
+import { AboutUsComponent } from './components/about-us/about-us.component';
+import { DetailsComponent } from './components/details/details.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +19,11 @@ import { HomeHeroComponent } from './components/home-hero/home-hero.component';
     HeaderComponent,
     FooterComponent,
     HomeComponent,
-    HomeHeroComponent
+    HomeHeroComponent,
+    ErrorComponent,
+    HeroComponent,
+    AboutUsComponent,
+    DetailsComponent
   ],
   imports: [
     BrowserModule,
