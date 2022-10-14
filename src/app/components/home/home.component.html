@@ -1,467 +1,306 @@
 <app-home-hero></app-home-hero>
-<div>
-  <div class="h2-container">
-    <span class="h2-text captiontitle"><span>Leatest Products</span></span>
-    <div class="h2-group171">
-      <span (click)="leatest('new')" [ngClass]="leatedId=='new'?'h2-text02 h2-text-focus':'h2-text02 h2-text-default'"><span>New Arrival</span></span>
-      <span (click)="leatest('best')" [ngClass]="leatedId=='best'?'h2-text04 h2-text-focus':'h2-text04 h2-text-default'"><span>Best Seller</span></span>
-      <span (click)="leatest('featured')" [ngClass]="leatedId=='featured'?'h2-text06 h2-text-focus':'h2-text06 h2-text-default'"><span>Featured</span></span>
-      <span (click)="leatest('special')" [ngClass]="leatedId=='special'?'h2-text08 h2-text-focus':'h2-text08 h2-text-default'"><span>Special Offer</span></span>
-    </div>
-  </div>
-</div>
-<div
-  class="d-flex flex-wrap justify-content-evenly"
-  style="width: 80%; margin: auto"
->
-  <div class="home-product-container" *ngFor="let product of leatestProds">
-    <div class="home-product-component9" style="cursor: pointer" [routerLink]="['/product']">
-      <div class="home-product-group137">
-        <span class="home-product-text"><span>{{product.title.substring(0,26)}}</span></span>
-        <span class="home-product-text2"><span>${{product.price}}</span></span>
-        <span class="home-product-text4"><span>${{(product.price+(product.price*product.discountPercentage/100)).toFixed(2)}}</span></span>
-        <img
-          src="assets/playground_assets/line2i526-hhlc.svg"
-          alt="Line2I526"
-          class="home-product-line2"
-        />
-        <div class="home-product-frame1"></div>
-        <img
-          [src]="product.thumbnail"
-          alt="image1166I526"
-          class="home-product-image1166"
-        />
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="offer-container">
-  <span class="offer-text captiontitle"><span>What NTTDATA Offer!</span></span>
-  <div class="offer-group266">
-    <div class="offer-freedelivery1">
-      <div class="offer-group">
-        <div class="offer-group01">
-          <img
-            src="assets/playground_assets/vector5262-w6kk.svg"
-            alt="Vector5262"
-            class="offer-vector"
-          />
-          <img
-            src="assets/playground_assets/vector5262-8pcm.svg"
-            alt="Vector5262"
-            class="offer-vector01"
-          />
-        </div>
-        <div class="offer-group02">
-          <div class="offer-group03">
-            <img
-              src="assets/playground_assets/vector5262-yn2p.svg"
-              alt="Vector5262"
-              class="offer-vector02"
-            />
-            <img
-              src="assets/playground_assets/vector5263-o5r.svg"
-              alt="Vector5263"
-              class="offer-vector03"
-            />
+<section class="featured">
+  <div class="container">
+      <div class="flex">
+          <h2 class="main-header-text">Featured Products</h2>
+          <div class="grid-wrapper">
+              <div class="card" *ngFor="let product of productList.slice(0,4)"
+              style="cursor: pointer;" (click)="goToProductDetails(product)">
+                  <div class="thumbnail">
+                      <img [src]="product.thumbnail" alt="">
+                  </div>
+                  <div class="description">
+                      <h3 class="">{{product.title}}</h3>
+                      <div class="indicator">
+                          <span id="one"></span>
+                          <span id="two"></span>
+                          <span id="three"></span>
+                      </div>
+                      <div class="code">
+                          <p>Discount</p>
+                          <p>%{{product.discountPercentage}}</p>
+                      </div>
+                      <p class="price">${{product.price}}</p>
+                  </div>
+              </div>
           </div>
-          <img
-            src="assets/playground_assets/vector5263-4lr4.svg"
-            alt="Vector5263"
-            class="offer-vector04"
-          />
-          <div class="offer-group04">
-            <img
-              src="assets/playground_assets/vector5263-onv.svg"
-              alt="Vector5263"
-              class="offer-vector05"
-            />
-            <img
-              src="assets/playground_assets/vector5263-wttc.svg"
-              alt="Vector5263"
-              class="offer-vector06"
-            />
+          <div class="slider-indicator">
+              <span id="active"></span>
+              <span></span>
+              <span></span>
+              <span></span>
           </div>
-        </div>
-        <div class="offer-group05">
-          <img
-            src="assets/playground_assets/vector5263-6lc8.svg"
-            alt="Vector5263"
-            class="offer-vector07"
-          />
-          <img
-            src="assets/playground_assets/vector5263-qz1.svg"
-            alt="Vector5263"
-            class="offer-vector08"
-          />
-          <img
-            src="assets/playground_assets/vector5263-8stc.svg"
-            alt="Vector5263"
-            class="offer-vector09"
-          />
-        </div>
-        <div class="offer-group06">
-          <img
-            src="assets/playground_assets/vector5264-hffn.svg"
-            alt="Vector5264"
-            class="offer-vector10"
-          />
-          <img
-            src="assets/playground_assets/vector5264-9pjq.svg"
-            alt="Vector5264"
-            class="offer-vector11"
-          />
-          <img
-            src="assets/playground_assets/vector5264-xnki.svg"
-            alt="Vector5264"
-            class="offer-vector12"
-          />
-        </div>
-        <div class="offer-group07">
-          <img
-            src="assets/playground_assets/vector5264-2itw.svg"
-            alt="Vector5264"
-            class="offer-vector13"
-          />
-          <img
-            src="assets/playground_assets/vector5264-dx6s.svg"
-            alt="Vector5264"
-            class="offer-vector14"
-          />
-          <img
-            src="assets/playground_assets/vector5264-lnzb.svg"
-            alt="Vector5264"
-            class="offer-vector15"
-          />
-          <img
-            src="assets/playground_assets/vector5264-hw5.svg"
-            alt="Vector5264"
-            class="offer-vector16"
-          />
-        </div>
       </div>
-    </div>
-    <div class="offer-premiumquality1">
-      <div class="offer-group08">
-        <div class="offer-group09">
-          <img
-            src="assets/playground_assets/vector5265-ocwq.svg"
-            alt="Vector5265"
-            class="offer-vector17"
-          />
-          <img
-            src="assets/playground_assets/vector5265-x89g.svg"
-            alt="Vector5265"
-            class="offer-vector18"
-          />
-          <img
-            src="assets/playground_assets/vector5265-t7ih.svg"
-            alt="Vector5265"
-            class="offer-vector19"
-          />
-        </div>
-        <div class="offer-group10">
-          <img
-            src="assets/playground_assets/vector5265-0pdb.svg"
-            alt="Vector5265"
-            class="offer-vector20"
-          />
-          <img
-            src="assets/playground_assets/vector5265-h5s.svg"
-            alt="Vector5265"
-            class="offer-vector21"
-          />
-          <img
-            src="assets/playground_assets/vector5265-b46s.svg"
-            alt="Vector5265"
-            class="offer-vector22"
-          />
-        </div>
-        <div class="offer-group11">
-          <div class="offer-group12">
-            <img
-              src="assets/playground_assets/vector5266-xntq.svg"
-              alt="Vector5266"
-              class="offer-vector23"
-            />
-            <img
-              src="assets/playground_assets/vector5266-t525.svg"
-              alt="Vector5266"
-              class="offer-vector24"
-            />
+  </div>
+</section>
+
+<!-- Latest Products -->
+<section class="latest">
+  <div class="container">
+      <div class="flex">
+          <div class="product-nav">
+              <h2 class="main-header-text">Latest Products</h2>
+              <div class="links">
+                  <a (click)="leatest('new')" [id]="leatedId=='new'?'active':''">New Arrival</a>
+                  <a (click)="leatest('best')" [id]="leatedId=='best'?'active':''">Best Seller</a>
+                  <a (click)="leatest('featured')" [id]="leatedId=='featured'?'active':''">Featured</a>
+                  <a (click)="leatest('special')" [id]="leatedId=='special'?'active':''">Special Offer</a>
+              </div>
           </div>
-          <div class="offer-group13">
-            <img
-              src="assets/playground_assets/vector5266-2ekn.svg"
-              alt="Vector5266"
-              class="offer-vector25"
-            />
-            <img
-              src="assets/playground_assets/vector5266-d8kq.svg"
-              alt="Vector5266"
-              class="offer-vector26"
-            />
+          <div class="flex-wrapper bold-text main-header-text">
+              <div class="col" *ngFor="let product of leatestProds"
+              style="cursor: pointer;" (click)="goToProductDetails(product)">
+                  <div class="thumbnail">
+                      <img [src]="product.thumbnail" alt="product thumbnail">
+                  </div>
+                  <div class="text">
+                      <p>{{product.title}}</p>
+                      <div class="tag">
+                          <p>${{product.price}}</p>
+                          <p class="line-through pink-text">${{(product.price+(product.price*product.discountPercentage/100)).toFixed(2)}}</p>
+                      </div>
+                  </div>
+              </div>
           </div>
-        </div>
-        <div class="offer-group14">
-          <img
-            src="assets/playground_assets/vector5266-t4vp.svg"
-            alt="Vector5266"
-            class="offer-vector27"
-          />
-          <img
-            src="assets/playground_assets/vector5266-5vgs.svg"
-            alt="Vector5266"
-            class="offer-vector28"
-          />
-        </div>
       </div>
-    </div>
-    <div class="offer-frame24hourssupport1">
-      <div class="offer-group15">
-        <div class="offer-group16">
-          <img
-            src="assets/playground_assets/vector5267-413m.svg"
-            alt="Vector5267"
-            class="offer-vector29"
-          />
-          <img
-            src="assets/playground_assets/vector5267-kexw.svg"
-            alt="Vector5267"
-            class="offer-vector30"
-          />
-        </div>
-        <div class="offer-group17">
-          <div class="offer-group18">
-            <img
-              src="assets/playground_assets/vector5267-mmw8.svg"
-              alt="Vector5267"
-              class="offer-vector31"
-            />
-            <img
-              src="assets/playground_assets/vector5267-4f5f.svg"
-              alt="Vector5267"
-              class="offer-vector32"
-            />
+  </div>
+</section>
+
+<!-- Shopex -->
+<section class="shopex">
+  <div class="container">
+      <h2 class="main-header-text">What Shopex Offer!</h2>
+      <div class="flex">
+          <div class="small-card">
+              <img src="assets/img/free-delivery 1.png" alt="">
+              <div class="text">
+                  <h3 class="main-header-text">Free delivery</h3>
+                  <p class="grey-text">Delivered on time, and still for free.</p>
+              </div>
           </div>
-          <img
-            src="assets/playground_assets/vector5267-qza8.svg"
-            alt="Vector5267"
-            class="offer-vector33"
-          />
-        </div>
-        <div class="offer-group19">
-          <img
-            src="assets/playground_assets/vector5267-nqne.svg"
-            alt="Vector5267"
-            class="offer-vector34"
-          />
-          <img
-            src="assets/playground_assets/vector5268-3ep3.svg"
-            alt="Vector5268"
-            class="offer-vector35"
-          />
-        </div>
-      </div>
-    </div>
-    <img
-      src="assets/playground_assets/cashback15268-66rd.svg"
-      alt="cashback15268"
-      class="offer-cashback1"
-    />
-  </div>
-</div>
-
-<div class="unique-container">
-  <div class="unique-rectangle101">
-    <div class="unique-uniquefeaturesofa">
-      <div class="unique-group156">
-        <span class="unique-text"><span>{{productList[0].title}}</span></span>
-        <span class="unique-text02"><span>${{productList[0].price}}</span></span>
-        <img
-          alt="Ellipse655249"
-          src="https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/0c57bd11-cbd8-46c9-a0f6-54790dd6c492/a1045547-2310-42a1-9895-038edec0d7cc?org_if_sml=1295"
-          class="unique-ellipse65"
-        />
-        <img
-          alt="Ellipse665249"
-          src="https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/0c57bd11-cbd8-46c9-a0f6-54790dd6c492/e040f620-1051-4f00-b9bc-9a5435e2674a?org_if_sml=1299"
-          class="unique-ellipse66"
-        />
-        <img
-          alt="Ellipse675249"
-          src="https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/0c57bd11-cbd8-46c9-a0f6-54790dd6c492/f9cd3a57-27e6-4ae4-9f67-a35db2621708?org_if_sml=1304"
-          class="unique-ellipse67"
-        />
-        <span class="unique-text04">
-          <span>
-            <span>Unique Features Of leatest &amp;</span>
-            <br />
-            <span>Trending Poducts</span>
-          </span>
-        </span>
-        <span class="unique-text09">
-          <span>
-            {{productList[0].description}}
-          </span>
-        </span>
-        <span class="unique-text11">
-          <span>{{productList[0].category}}</span>
-        </span>
-        <span class="unique-text13">
-          <span>
-            <span>
-              Discount {{productList[0].discountPercentage}}%
-            </span>
-          </span>
-        </span>
-        <div class="unique-group153">
-          <img
-            alt="HomeStylishClubSofaChairPleatedSofaArmchairwithGol5250"
-            [src]="productList[0].thumbnail"
-            class="unique-home-stylish-club-sofa-chair-pleated-sofa-armchairwith-gol"
-          />
-        </div>
-      </div>
-      <button class="unique-shopnowbutton">
-        <div class="unique-group155">
-          <span class="unique-text18"><span>Add To Cart</span></span>
-        </div>
-      </button>
-    </div>
-  </div>
-</div>
-
-<div class="trend-title-container">
-  <span class="trend-title-text captiontitle">
-    <span>Trending Products</span>
-  </span>
-</div>
-
-<div
-  class="d-flow flex-wrap justify-content-evenly"
-  style="width: 78%; margin: auto"
->
-  <div class="trend-component-container" *ngFor="let product of productList.slice(1)">
-    <div class="trend-component-trendingproducts">
-      <div class="trend-component-group2">
-        <div class="trend-component-mask-group"></div>
-      </div>
-      <div class="trend-component-group25">
-        <span class="trend-component-text"><span>{{product.title}}</span></span>
-        <div class="trend-component-group23">
-          <span class="trend-component-text2 pricecut">
-            <span>${{(product.price+(product.price*product.discountPercentage/100)).toFixed(2)}}</span>
-          </span>
-          <span class="trend-component-text4">
-            <span>${{product.price}}</span>
-          </span>
-        </div>
-      </div>
-      <div class="trend-component-boxforimage">
-        <img
-          [src]="product.thumbnail"
-          alt="Product Image"
-          class="trend-component-image1170"
-        />
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="discount-container">
-  <span class="discount-text captiontitle">Discount</span>
-  <div class="discount-discountsofa">
-    <span class="discount-text01">
-      <span>20% Discount Of All Products</span>
-    </span>
-    <span class="discount-text03"><span>You miss 100% of the shots you don’t take.</span></span>
-    <div class="discount-group157">
-      <div class="discount-shopnowbutton">
-        <div class="discount-group155"></div>
-      </div>
-      <span class="discount-text05"><span>Shop Now</span></span>
-    </div>
-    <span class="discount-text07">
-      <span>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eu eget feugiat
-        habitasse nec, bibendum condimentum.
-      </span>
-    </span>
-    <span class="discount-text09">
-      <span>Material expose like metals</span>
-    </span>
-    <span class="discount-text11"><span>Simple neutral colours.</span></span>
-    <span class="discount-text13">
-      <span>Material expose like metals</span>
-    </span>
-    <span class="discount-text15">
-      <span>Clear lines and geomatric figures</span>
-    </span>
-    <img
-      src="assets/playground_assets/vectori525-2nuc.svg"
-      alt="VectorI525"
-      class="discount-vector"
-    />
-    <img
-      src="assets/playground_assets/vectori525-rcyd.svg"
-      alt="VectorI525"
-      class="discount-vector1"
-    />
-    <div class="discount-group154">
-      <img
-        src="https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/0c57bd11-cbd8-46c9-a0f6-54790dd6c492/38ebe835-a315-4421-9909-b856abee3895?org_if_sml=17893"
-        alt="Ellipse64I525"
-        class="discount-ellipse64"
-      />
-      <img
-        src="https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/0c57bd11-cbd8-46c9-a0f6-54790dd6c492/1e356a5b-1f6a-42da-a9f4-8281666b67fa?org_if_sml=1214943"
-        alt="tortuga01b1I525"
-        class="discount-tortuga01b1"
-      />
-    </div>
-    <img
-      src="assets/playground_assets/checki525-9v3.svg"
-      alt="checkI525"
-      class="discount-check"
-    />
-    <img
-      src="assets/playground_assets/checki525-ygw.svg"
-      alt="checkI525"
-      class="discount-check1"
-    />
-  </div>
-</div>
-
-<div class="last-slide-container">
-  <div class="last-slide-group162">
-    <div class="last-slide-group161">
-      <img
-        src="https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/0c57bd11-cbd8-46c9-a0f6-54790dd6c492/fd7bd156-2eef-4580-96b8-cf558c63c775?org_if_sml=1496238"
-        alt="Rectangle1025252"
-        class="last-slide-rectangle102"
-      />
-      <div class="last-slide-group160">
-        <span class="last-slide-text">
-          <span>
-            <span>Get Leatest Update By Subscribe</span>
-            <br />
-            <span>0ur Newslater</span>
-          </span>
-        </span>
-        <div class="last-slide-group157">
-          <div class="last-slide-shopnowbutton">
-            <div class="last-slide-group155"></div>
+          <div class="small-card">
+              <img src="assets/img/cashback 1.png" alt="">
+              <div class="text">
+                  <h3 class="main-header-text">Cashback</h3>
+                  <p class="grey-text">Keep calm and keep shopping with the Ntt offers.</p>
+              </div>
           </div>
-          <span class="last-slide-text5"><span>Shop Now</span></span>
-        </div>
+          <div class="small-card">
+              <img src="assets/img/premium-quality 1.png" alt="">
+              <div class="text">
+                  <h3 class="main-header-text">Premium Quality</h3>
+                  <p class="grey-text">Don't be satisfied with anything less than perfect quality! We're out to make quality happen! Quality.</p>
+              </div>
+          </div>
+          <div class="small-card">
+              <img src="assets/img/24-hours-support 1.png" alt="">
+              <div class="text">
+                  <h3 class="main-header-text">24/7 Support</h3>
+                  <p class="grey-text">Politeness goes far, yet costs nothing. Put customers first. Satisfied customers are our best ads. The customer is always right.</p>
+              </div>
+          </div>
       </div>
-    </div>
   </div>
-  <img
-    src="https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/0c57bd11-cbd8-46c9-a0f6-54790dd6c492/bbbc20ab-4b38-4397-a2d5-4bccf73dd5d4?org_if_sml=114489"
-    alt="image11745269"
-    class="last-slide-image1174"
-  />
-</div>
+</section>
+
+<!-- Unique Features -->
+<section class="unique-features main-bg">
+  <div class="container">
+      <div class="flex">
+          <div class="image">
+              <img [src]="productList[4].thumbnail" class="sofa">
+          </div>
+          <div class="product-features">
+              <h2 class="main-header-text" id="text-left">Unique Features Of latest &
+                  Trending Products
+              </h2>
+              <div class="feature-list">
+                  <div class="list">
+                      <span class="bullet-1 bullets"></span>
+                      <p class="grey-text">{{productList[4].description}}</p>
+                  </div>
+                  <div class="list">
+                      <span class="bullet-2 bullets"></span>
+                      <p class="grey-text">{{productList[4].brand}}</p>
+                  </div>
+                  <div class="list">
+                      <span class="bullet-3 bullets"></span>
+                      <p class="grey-text">{{productList[4].category}}</p>
+                  </div>
+              </div>
+              <form>
+                  <button class="primary-btn"><a href="./shoping cart.html">Add To Cart</a></button>
+                  <div>
+                      <h5 class="blue-text">{{productList[4].title}}</h5>
+                      <p class="blue-text">${{productList[4].price}}</p>
+                  </div>
+              </form>
+          </div>
+      </div>
+  </div>
+</section>
+
+<!-- Trending -->
+<section class="trending">
+  <div class="container">
+      <div class="flex">
+          <h2 class="main-header-text">Trending Products</h2>
+          <div class="flex-wrapper">
+              <div class="card" *ngFor="let product of productList.slice(5)"
+              style="cursor: pointer;" (click)="goToProductDetails(product)">
+                  <div class="thumbnail">
+                      <img [src]="product.thumbnail" alt="">
+                  </div>
+                  <div class="description">
+                      <h3 class="main-header-text">{{product.title}}</h3>
+                      <div class="price">
+                          <p class="main-header-text bold-text">${{product.price}}</p>
+                          <p class="line-through grey-text">${{(product.price+(product.price*product.discountPercentage/100)).toFixed(2)}}</p>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>
+
+<!-- Discount Item -->
+<section class="discount-item">
+  <div class="container">
+      <div class="flex">
+          <h2 class="main-header-text">Discount</h2>
+
+          <div class="discount-showcase">
+              <!-- Left side -->
+              <div class="left-side">
+                  <h1 class="main-header-text" id="text-left">20% Discount Of All Products</h1>
+                  <h3 class="pink-text">Earn Sofa Compact</h3>
+                  <p class="grey-text pt-2">Lorem ipsum dolor sit amet consectetur adipisicing elit.<br> Quam doloremque commodi facilis quas voluptatibus!</p>
+                  <div class="features grey-text">
+                      <div>
+                          <i class="fas fa-check"></i>Material expose like metals
+                      </div>
+                      <div>
+                          <i class="fas fa-check"></i>Clear lines and geomatic figures
+                      </div>
+                      <div>
+                          <i class="fas fa-check"></i>Simple neutral colours.
+                      </div>
+                      <div>
+                          <i class="fas fa-check"></i>Material expose like metals
+                      </div>
+                  </div>
+                  <button class="primary-btn">Shop Now</button>
+              </div>
+
+              <!-- Right side with image-->
+              <div class="right-side">
+                  <img src="assets/img/Ellipse 60.svg" alt="" class="ellipse">
+                  <img src="assets/img/tortuga-01-b 1.png" alt="" class="chair">
+              </div>
+          </div>
+      </div>
+  </div>
+</section>
+
+<!-- Top Categories -->
+<section class="top">
+  <div class="container">
+      <div class="flex">
+          <h2 class="main-header-text">Top Categories</h2>
+          <div class="flex-wrapper">
+              <div class="chair-showcase" *ngFor="let product of categoryProds"
+              style="cursor: pointer;" (click)="goToProductDetails(product)">
+                  <div class="rounded-card">
+                      <img [src]="product.thumbnail" alt="">
+                  </div>
+                  <h3>{{product.title}}</h3>
+                  <p>${{product.price}}</p>
+              </div>
+          </div>
+          <div class="indicators">
+              <span id="active"></span>
+              <span></span>
+              <span></span>
+          </div>
+      </div>
+  </div>
+</section>
+
+<!-- Newsletter -->
+<section class="newsletter" style="background-image: url(assets/img/Rectangle\ 102.png);">
+  <div class="container">
+      <div class="flex">
+          <h2 class="main-header-text">Get Latest Update By Subscribing<br>
+              to our Newsletter
+          </h2>
+          <button class="primary-btn">Shop Now</button>
+      </div>
+  </div>
+</section>
+
+<!-- Sponsors -->
+<section class="sponsors">
+  <div class="container">
+      <div class="flex">
+          <img src="assets/img/image 1174.png" alt="">
+      </div>
+  </div>
+</section>
+
+<!-- Latest Blog -->
+<section class="blog">
+  <div class="container">
+      <h2 class="main-header-text">Latest Blog</h2>
+      <div class="flex">
+          <article>
+              <div class="thumbnail">
+                  <img src="assets/img/JIUjvqe2ZHg.png" alt="">
+              </div>
+              <div class="description">
+                  <div class="about">
+                      <h5>Saber Ali</h5>
+                      <h5>21 August,2020</h5>
+                  </div>
+                  <h3 class="blue-text">Top essential Trends in 2021</h3>
+                  <p>More off this less hello samlande lied much
+                      over tightly circa horse taped mightly
+                  </p>
+                  <a href="./single blog.html">Read More</a>
+              </div>
+          </article>
+          <article>
+              <div class="thumbnail">
+                  <img src="assets/img/2dcYhvbHV-M.png" alt="">
+              </div>
+              <div class="description">
+                  <div class="about">
+                      <h5>Saber Ali</h5>
+                      <h5>21 August,2020</h5>
+                  </div>
+                  <h3 id="active">Top essential Trends in 2021</h3>
+                  <p>More off this less hello samlande lied much
+                      over tightly circa horse taped mightly
+                  </p>
+                  <a id="active" href="./single blog.html">Read More</a>
+              </div>
+          </article>
+          <article>
+              <div class="thumbnail">
+                  <img src="assets/img/2dcYhvbHV-M (1).png" alt="">
+              </div>
+              <div class="description">
+                  <div class="about">
+                      <h5>Saber Ali</h5>
+                      <h5>21 August,2020</h5>
+                  </div>
+                  <h3 class="blue-text">Top essential Trends in 2021</h3>
+                  <p>More off this less hello samlande lied much
+                      over tightly circa horse taped mightly
+                  </p>
+                  <a href="./single blog.html">Read More</a>
+              </div>
+          </article>
+      </div>
+  </div>
+</section>

@@ -1,91 +1,15 @@
-.error-container {
-  width: 100%;
+/* 404 Not found page */
+.error-message {
   display: flex;
-  overflow: auto;
-  min-height: 100vh;
-  align-items: center;
   flex-direction: column;
-}
-.error-pasted-image {
-  width: 935px;
-  height: 575px;
-}
-.error-group116 {
-  width: auto;
-  height: 49px;
-  display: flex;
-  position: relative;
-  align-self: center;
-  box-sizing: border-box;
-  align-items: flex-start;
-  flex-shrink: 1;
-  border-color: transparent;
-  border-style: none;
-  border-width: 0;
-  border-radius: 0px 0px 0px 0px;
-  flex-direction: row;
-  justify-content: flex-start;
-  background-color: transparent;
-}
-.error-group125 {
-  top: 0px;
-  right: 0px;
-  width: 165px;
-  height: 44px;
-  margin: auto;
-  display: flex;
-  padding: 0;
-  position: absolute;
-  align-self: auto;
-  box-sizing: border-box;
-  align-items: flex-start;
-  flex-shrink: 1;
-  border-color: transparent;
-  border-style: none;
-  border-width: 0;
-  border-radius: 0px 0px 0px 0px;
-  flex-direction: row;
-  justify-content: flex-start;
-  background-color: transparent;
-  cursor: pointer;
-}
-.error-group113 {
-  flex: 1;
+  align-items: center;
   width: 100%;
-  height: 100%;
-  display: flex;
-  padding: 0;
-  box-sizing: border-box;
-  align-items: flex-start;
-  flex-shrink: 1;
-  border-color: transparent;
-  border-style: none;
-  border-width: 0;
-  border-radius: 0px 0px 0px 0px;
-  flex-direction: row;
-  justify-content: flex-start;
-  background-color: rgba(251, 46, 134, 1);
 }
-.error-text {
-  top: 9px;
-  left: 30px;
-  color: rgba(255, 255, 255, 1);
-  width: 105px;
-  height: auto;
-  position: absolute;
-  font-size: 16px;
-  align-self: auto;
-  font-style: Regular Roman;
-  text-align: left;
-  font-family: Josefin Sans;
-  font-weight: 400;
-  line-height: 25.600000381469727px;
-  font-stretch: normal;
-  text-decoration: none;
+
+.error-message img {
+  max-width: 70%;
 }
-.error-image1174 {
-  width: 1246px;
-  height: 128px;
-  position: relative;
-  border-color: transparent;
+
+.error-message h2 {
+  font-size: 1rem;
 }

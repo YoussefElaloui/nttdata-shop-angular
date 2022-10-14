@@ -14,5 +14,14 @@ export class ProductService {
   getProducts(limit:number,skip:number=0):Observable<Result>{
     return this.httpClient.get<Result>(`https://dummyjson.com/products?limit=${limit}&skip=${skip}`)
   }
+  getProductsByCategory(category:string,limit:number,skip:number=0):Observable<Result>{
+    return this.httpClient.get<Result>(`https://dummyjson.com/products/category/${category}?limit=${limit}&skip=${skip}`)
+  }
+  getProduct(id:number):Observable<Product>{
+    return this.httpClient.get<Product>(`https://dummyjson.com/products/${id}`);
+  }
+  getCategories():Observable<string[]>{
+    return this.httpClient.get<string[]>('https://dummyjson.com/products/categories');
+  }
 
 }

@@ -12,6 +12,8 @@ import { ErrorComponent } from './components/error/error.component';
 import { HeroComponent } from './components/hero/hero.component';
 import { AboutUsComponent } from './components/about-us/about-us.component';
 import { DetailsComponent } from './components/details/details.component';
+import { ShopComponent } from './components/shop/shop.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -23,12 +25,14 @@ import { DetailsComponent } from './components/details/details.component';
     ErrorComponent,
     HeroComponent,
     AboutUsComponent,
-    DetailsComponent
+    DetailsComponent,
+    ShopComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

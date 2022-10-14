@@ -1,0 +1,155 @@
+/* SHOP GRID DEFAULT PAGE */
+/* header.shop-grid-hero-section {
+    padding: 70px 0;
+} */
+
+.shop-grid .grid-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.shop-grid .soft-card {
+  width: 220px;
+  margin: 20px;
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.shop-grid .soft-card .description {
+  padding: 10px 0;
+}
+
+.shop-grid .soft-card .description .price {
+  display: flex;
+  justify-content: center;
+}
+
+.shop-grid .soft-card .description .price > * {
+  padding: 0 5px;
+}
+
+.shop-grid .soft-card .thumbnail {
+  background-color: #F1F0FF;
+  padding: 40px;
+  width: 100%;
+  height: 250px;
+}
+
+/* Shop List Page */
+.shop-list .shop-list-container .col{
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  max-width: 100%;
+  gap: 2em;
+}
+
+.shop-list .shop-list-container .col .details > * {
+  padding: 5px 0;
+}
+
+.shop-list-container .col .details {
+  width: 50%;
+}
+
+.shop-list-container .col .options > *{
+  margin-right: 1em;
+}
+
+
+.shop-list-container .col .price-and-rating {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .8em;
+  font-size: 12px;
+}
+
+.shop-list-container .col .list-thumbnail {
+  width: 30%;
+}
+
+.shop-filter-container {
+  display: flex;
+}
+
+.shop-filter-container aside.sidebar {
+  width: 250px;
+  font-size: 14px;
+}
+
+.shop-filter-container aside.sidebar > * {
+  margin: 40px 0;
+}
+
+.shop-filter-container aside.sidebar h3 {
+  color: #151875 !important;
+}
+
+.shop-filter-container aside.sidebar > div > * {
+  padding: 5px 0;
+  color: #00000079;
+}
+
+.shop-filter-container .filter-by-color span.circle {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: #000;
+  display: block;
+  margin-right: 7px;
+}
+
+.shop-filter-container .filter-color-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+span#blue {
+  background-color: #7E33E0;
+}
+span#orange {
+  background-color: #f38632;
+}
+span#brown {
+  background-color: #e08859;
+}
+span#green {
+  background-color: #61e98a;
+}
+span#purple {
+  background-color: #e961de;
+}
+span#sky {
+  background-color: #68bee9;
+}
+
+.filter-by-color div {
+  display: flex;
+  padding: 10px 20px 0 0;
+}
+
+@media (max-width: 968px) {
+  .shop-grid .header {
+      justify-content: center;
+  }
+
+  .shop-grid .header .right {
+      padding-top: 30px;
+  }
+
+  .shop-filter-container{
+      flex-direction: column-reverse;
+  }
+
+  .shop-list-container .col .details {
+      width: 100%;
+  }
+
+  .shop-list-container .col .list-thumbnail {
+      width: 100%;
+  }
+}

@@ -1,77 +1,60 @@
-<app-hero title="Product Details"></app-hero>
-<div class="product-container">
-  <div class="product-group267">
-    <div class="product-group236">
-      <img
-        src="assets/playground_assets/antdesignstarfilled5444-m4f.svg"
-        alt="antdesignstarfilled5444"
-        class="product-antdesignstarfilled"
-      />
-      <img
-        src="assets/playground_assets/antdesignstarfilled5444-rh9m.svg"
-        alt="antdesignstarfilled5444"
-        class="product-antdesignstarfilled1"
-      />
-      <img
-        src="assets/playground_assets/antdesignstarfilled5445-5x34l.svg"
-        alt="antdesignstarfilled5445"
-        class="product-antdesignstarfilled2"
-      />
-      <img
-        src="assets/playground_assets/antdesignstarfilled5445-78z8.svg"
-        alt="antdesignstarfilled5445"
-        class="product-antdesignstarfilled3"
-      />
-      <img
-        src="assets/playground_assets/antdesignstarfilled5445-fmrq.svg"
-        alt="antdesignstarfilled5445"
-        class="product-antdesignstarfilled4"
-      />
-    </div>
-    <img
-      src="https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/0c57bd11-cbd8-46c9-a0f6-54790dd6c492/6fd2586e-8af6-40e6-97dc-e99c85badb60?org_if_sml=116442"
-      alt="Rectangle1345445"
-      class="product-rectangle134"
-    />
-    <img
-      src="https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/0c57bd11-cbd8-46c9-a0f6-54790dd6c492/cbabdab9-5a34-4bed-b843-5f009d2466b8?org_if_sml=19701"
-      alt="Rectangle1365445"
-      class="product-rectangle136"
-    />
-    <img
-      src="https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/0c57bd11-cbd8-46c9-a0f6-54790dd6c492/3c2f78d8-6901-4ee5-b160-af683328c86f?org_if_sml=136640"
-      alt="Rectangle1375445"
-      class="product-rectangle137"
-    />
-    <img
-      src="https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/0c57bd11-cbd8-46c9-a0f6-54790dd6c492/ce4816c5-20f0-4c9d-b060-c9376ccc0487?org_if_sml=165849"
-      alt="Rectangle1385445"
-      class="product-rectangle138"
-    />
-    <span class="product-text"><span>Category:</span></span>
-    <span class="product-text02"><span>Add To cart</span></span>
-    <span class="product-text04"><span>$32.00</span></span>
-    <span class="product-text08"><span>$32.00</span></span>
-    <span class="product-text10"><span>Playwood arm chair</span></span>
-    <span class="product-text12"><span>Color</span></span>
-    <span class="product-text14">
-      <span>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tellus
-        porttitor purus, et volutpat sit.
-      </span>
-    </span>
-    <div class="product-group235">
-      <img
-        src="https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/0c57bd11-cbd8-46c9-a0f6-54790dd6c492/d12e8c0f-cc63-4e2d-aa96-a850f8877e6a?org_if_sml=14959"
-        alt="Ellipse225453"
-        class="product-ellipse22"
-      />
-      <img
-        src="assets/playground_assets/uilheartalt5453-3t0s.svg"
-        alt="uilheartalt5453"
-        class="product-uilheartalt"
-      />
-    </div>
+<section class="product-details-page">
+  <div class="container">
+      <div class="product">
+          <div class="product-img">
+              <div class="side-1"><img [src]="product.images[0]" alt=""></div>
+              <div class="side-2"><img [src]="product.images.length>1?product.images[1]:product.images[0]" alt=""></div>
+              <div class="side-3"><img [src]="product.images.length>2?product.images[2]:product.images[0]" alt=""></div>
+              <div class="side-4"><img [src]="product.thumbnail" alt=""></div>
+          </div>
+          <div class="product-details">
+              <h2 class="blue-text">{{product.title}}</h2>
+              <div class="rating">
+                  <i class="fas fa-star yellow" *ngFor="let star of [].constructor(floor(product.rating))"></i>
+              </div>
+              <div class="price">
+                  <p class="blue-text">${{product.price}}</p>
+                  <p class="pink-text line-through">${{(product.price+(product.price*product.discountPercentage/100)).toFixed(2)}}</p>
+              </div>
+              <div class="color">
+                  <h3 class="blue-text">{{product.brand}}</h3>
+              </div>
+              <div class="about">
+                  <p class="grey-text">{{product.description}}</p>
+              </div>
+              <button>Add To Cart</button>
+              <div class="categories">
+                  <h3 class="blue-text">Category: {{product.category}}</h3>
+              </div>
+          </div>
+      </div>
   </div>
-</div>
+</section>
 
+
+<section class="related-product-container">
+  <div class="container">
+      <h2 class="blue-text">Related Products</h2>
+      <div class="related-products">
+          <div class="product" *ngFor="let product of relatedList" style="cursor:pointer" (click)="goToProductDetails(product)">
+              <img [src]="product.thumbnail" alt="Product Image">
+              <div>
+                  <h3 class="blue-text">{{product.title}}</h3>
+                  <div class="rating">
+                      <i class="fas fa-star yellow" *ngFor="let i of [].constructor(floor(product.rating))"></i>
+                  </div>
+              </div>
+              <div class="price"><p class="blue-text">${{product.price}}</p></div>
+          </div>
+      </div>
+  </div>
+</section>
+
+<!-- Sponsors -->
+<section class="sponsors">
+  <div class="container">
+      <div class="flex">
+          <img src="assets/img/image 1174.png" alt="">
+      </div>
+  </div>
+</section>

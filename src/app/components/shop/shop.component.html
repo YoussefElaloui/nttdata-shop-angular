@@ -1,0 +1,212 @@
+<app-hero [title]="title"></app-hero>
+<!-- shop grid -->
+<section class="shop-grid" *ngIf="layoutGrid == true">
+  <div class="container">
+    <div class="header">
+      <div class="left">
+        <h2 class="blue-text">Ecommerce Widgets & New Trends</h2>
+      </div>
+
+      <div class="right">
+        <form>
+          <label>Per Page:</label>
+          <input
+            type="number"
+            value="1"
+            (input)="change()"
+            [(ngModel)]="page"
+            [ngModelOptions]="{ standalone: true }"
+            minlength="1"
+          />
+        </form>
+        <form>
+          <label>Sort By:</label>
+          <select
+            [(ngModel)]="sort"
+            [ngModelOptions]="{ standalone: true }"
+            (change)="sortList()"
+          >
+            <option selected="true" value="best">Best Match</option>
+            <option value="price">Price</option>
+          </select>
+        </form>
+        <form>
+          <label>View:</label>
+          <i class="fas fa-list" (click)="switchLayout(true)"></i>
+        </form>
+      </div>
+    </div>
+    <div class="grid-wrapper">
+      <div
+        class="soft-card"
+        style="cursor: pointer"
+        *ngFor="let product of products"
+        (click)="goToProductDetails(product)"
+      >
+        <div class="thumbnail">
+          <img [src]="product.thumbnail" alt="" />
+        </div>
+        <div class="description">
+          <h3 class="blue-text">{{ product.title }}</h3>
+          <div class="price">
+            <p class="blue-text">${{ product.price }}</p>
+            <p class="pink-text line-through">
+              ${{
+                (
+                  product.price +
+                  (product.price * product.discountPercentage) / 100
+                ).toFixed(2)
+              }}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="slider-indicator">
+      <span id="active"></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+</section>
+
+<section class="shop-list" *ngIf="layoutGrid == false">
+  <div class="container">
+    <div class="header">
+      <div class="left">
+        <h2 class="blue-text">Ecommerce Widgets & New Trends</h2>
+      </div>
+
+      <div class="right">
+        <form>
+          <label>Per Page:</label>
+          <input
+            type="number"
+            value="1"
+            (input)="change()"
+            [(ngModel)]="page"
+            [ngModelOptions]="{ standalone: true }"
+            minlength="1"
+          />
+        </form>
+        <form>
+          <label>Sort By:</label>
+          <select
+            [(ngModel)]="sort"
+            [ngModelOptions]="{ standalone: true }"
+            (change)="sortList()"
+          >
+            <option selected="true" value="best">Best Match</option>
+            <option value="price">Price</option>
+          </select>
+        </form>
+        <form>
+          <label>View:</label>
+          <i class="fas fa-columns" (click)="switchLayout(false)"></i>
+        </form>
+      </div>
+    </div>
+
+    <div class="shop-filter-container">
+      <aside class="sidebar">
+
+        <div class="discount-offer">
+          <h3 class="blue-text underline">Discont Offer</h3>
+          <div class="grey-text"><input type="checkbox" /> 20% Cashback</div>
+          <div class="grey-text">
+            <input type="checkbox" /> 5% Cashback Offer
+          </div>
+          <div class="grey-text">
+            <input type="checkbox" /> 25% Discount Offer
+          </div>
+        </div>
+
+        <div class="rating-item">
+          <h3 class="blue-text underline">Rating Item</h3>
+          <div>
+            <input type="checkbox" />
+            <i class="fas fa-star yellow"></i>
+            <i class="fas fa-star yellow"></i>
+            <i class="fas fa-star yellow"></i>
+            <i class="fas fa-star yellow"></i>
+            <i class="fas fa-star grey-text"></i> (2341)
+          </div>
+          <div>
+            <input type="checkbox" />
+            <i class="fas fa-star yellow"></i>
+            <i class="fas fa-star yellow"></i>
+            <i class="fas fa-star yellow"></i>
+            <i class="fas fa-star grey-text"></i>
+            <i class="fas fa-star grey-text"></i> (1726)
+          </div>
+          <div>
+            <input type="checkbox" />
+            <i class="fas fa-star yellow"></i>
+            <i class="fas fa-star yellow"></i>
+            <i class="fas fa-star grey-text"></i>
+            <i class="fas fa-star grey-text"></i>
+            <i class="fas fa-star grey-text"></i> (258)
+          </div>
+          <div>
+            <input type="checkbox" />
+            <i class="fas fa-star yellow"></i>
+            <i class="fas fa-star yellow"></i>
+            <i class="fas fa-star grey-text"></i>
+            <i class="fas fa-star grey-text"></i>
+            <i class="fas fa-star grey-text"></i> (25)
+          </div>
+        </div>
+
+        <div class="categories">
+          <h3 class="blue-text underline">Categories</h3>
+          <div *ngFor="let cat of categories">
+            <input type="checkbox" /> {{cat}}</div>
+        </div>
+
+        <div class="price-filter">
+          <h3 class="blue-text underline">Price Filter</h3>
+          <div><input type="checkbox" /> $0.00 - $150.00</div>
+          <div><input type="checkbox" /> $150.00 - $350.00</div>
+          <div><input type="checkbox" /> $150.00 - $504.00</div>
+          <div><input type="checkbox" /> $450.00 +</div>
+        </div>
+      </aside>
+
+      <div class="shop-list-container">
+        <div class="col" *ngFor="let product of products"
+        (click)="goToProductDetails(product)"
+        style="cursor: pointer;">
+          <img
+            [src]="product.thumbnail"
+            alt=""
+            class="list-thumbnail"
+          />
+          <div class="details">
+            <h3 class="blue-text">{{product.title}}</h3>
+            <div class="price-and-rating">
+              <p class="blue-text">${{product.price}}</p>
+              <p class="line-through pink-text">${{(product.price+(product.price*product.discountPercentage/100)).toFixed(2)}}</p>
+              <div class="rating">
+                <i class="fas fa-star yellow" *ngFor="let star of [].constructor(floor(product.rating))"></i>
+                <i class="fas fa-star grey-text" *ngFor="let dstar of [].constructor(5-floor(product.rating))"></i>
+              </div>
+            </div>
+            <div class="body">
+              <p class="grey-text">{{product.description}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Sponsors -->
+<section class="sponsors">
+  <div class="container">
+    <div class="flex">
+      <img src="assets/img/image 1174.png" alt="" />
+    </div>
+  </div>
+</section>
