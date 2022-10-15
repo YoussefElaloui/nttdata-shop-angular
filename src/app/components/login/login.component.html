@@ -1,0 +1,19 @@
+<app-hero title="My Account"></app-hero>
+<section class="login-form">
+  <div class="container">
+      <form #loginForm="ngForm" (submit)="submit(loginForm)" >
+          <h2>Login</h2>
+          <p class="grey-text">Please login using account detail below.</p>
+          <input type="text" placeholder="Email Address" name="email" ngModel>
+          <input type="password" placeholder="Password" name="password" ngModel>
+          <button type="submit" class="mb-4">Sign In</button>
+
+          <div class="alert alert-success" *ngIf="isSucceful">
+            Your login has been successful, forwarding you to home page
+          </div>
+          <div class="alert alert-danger" *ngIf="!isSucceful && loginForm.submitted">
+            Your login has failed, please try again
+          </div>
+      </form>
+  </div>
+</section>

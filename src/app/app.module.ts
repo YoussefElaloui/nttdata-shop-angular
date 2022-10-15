@@ -14,6 +14,8 @@ import { AboutUsComponent } from './components/about-us/about-us.component';
 import { DetailsComponent } from './components/details/details.component';
 import { ShopComponent } from './components/shop/shop.component';
 import { FormsModule } from '@angular/forms';
+import { LoginComponent } from './components/login/login.component';
+import { CartComponent } from './components/cart/cart.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import { FormsModule } from '@angular/forms';
     HeroComponent,
     AboutUsComponent,
     DetailsComponent,
-    ShopComponent
+    ShopComponent,
+    LoginComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,

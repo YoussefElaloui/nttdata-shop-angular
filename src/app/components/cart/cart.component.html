@@ -1,0 +1,64 @@
+<app-hero title="Shopping Cart"></app-hero>
+
+<section class="shopping-cart">
+  <div class="container">
+    <div class="cart-container">
+      <table class="car-list">
+        <thead>
+          <tr>
+            <th><h3 class="blue-text">Product</h3></th>
+            <th><h3 class="blue-text">Price</h3></th>
+            <th><h3 class="blue-text">Quantity</h3></th>
+            <th><h3 class="blue-text">Total</h3></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let product of cart?.products">
+            <td class="product">
+              <div class="details">
+                <img
+                  [src]="product.thumbnail"
+                  alt="product thumbnail"
+                  class="cart-image"
+                />
+                <div>
+                  <h4 class="blue-text">{{product.title}}</h4>
+                  <p class="grey-text">Discount: {{product.discountPercentage}}%</p>
+                </div>
+              </div>
+            </td>
+            <td class="price">
+              <div class="price">
+                <p class="blue-text">${{product.price}}</p>
+              </div>
+            </td>
+            <td class="quantity">{{product.quantity}}</td>
+            <td class="total"><p class="blue-text">${{product.total}}</p></td>
+          </tr>
+          <tr class="cart-list-buttons">
+            <td></td>
+            <td></td>
+            <td><button (click)="clear()">Clear Cart</button></td>
+          </tr>
+        </tbody>
+      </table>
+
+        <div class="cart-checkout">
+          <h3 class="main-header-text">Cart Total</h3>
+          <div class="checkout">
+            <div>
+              <h3 class="blue-text">Totals:</h3>
+              <p class="blue-text">${{cart?.total}}</p>
+            </div>
+            <form class="grey-text">
+              <input type="checkbox" />
+              shipping & taxes calculated at checkout
+            </form>
+            <button class="checkout-btn">
+              <a href="./order completed.html">Proceed To Checkout</a>
+            </button>
+          </div>
+        </div>
+    </div>
+  </div>
+</section>

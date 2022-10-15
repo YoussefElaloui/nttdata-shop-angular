@@ -18,9 +18,8 @@
           <div class="left-nav">
               <a href="#">English <img src="assets/img/akar-icons_chevron-down2.svg" alt=""></a>
               <a href="#">USD <img src="assets/img/akar-icons_chevron-down2.svg" alt=""></a>
-              <a href="./my account.html">Login <img src="assets/img/carbon_user.svg" alt=""></a>
-              <a href="#">Wishlist <img src="assets/img/uil_heart-alt - Copy.svg" alt=""></a>
-              <a href="#"><img src="assets/img/fluent_cart-24-regular.svg" alt=""></a>
+              <a *ngIf="!isLogin" [routerLink]="['/login']">Login <img src="assets/img/carbon_user.svg" alt=""></a>
+              <a [routerLink]="['/cart']" *ngIf="isLogin"><img src="assets/img/fluent_cart-24-regular.svg" alt=""></a>
           </div>
       </div>
   </div>
@@ -32,7 +31,7 @@
       <div class="flex">
           <div class="logo"><h1>NTT STORE</h1></div>
           <div class="nav-items">
-              <a href="./index.html" id="active">Home <img src="assets/img/akar-icons_chevron-down.svg"></a>
+              <a href="./index.html" id="active">Home</a>
               <a [routerLink]="['about-us']">About Us</a>
               <a href="#">Products</a>
               <a href="./blog page.html">Blog</a>
@@ -55,7 +54,7 @@
                   <a href="./blog page.html">Blog</a>
                   <a [routerLink]="['shop']">Shop</a>
                   <a href="./contact us.html">Contact</a>
-                  <a href="./my account.html">Login</a>
+                  <a  *ngIf="!isLogin" [routerLink]="['/login']">Login</a>
               </div>
           </div>
 

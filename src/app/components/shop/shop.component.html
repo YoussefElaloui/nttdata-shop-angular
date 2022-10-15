@@ -112,64 +112,64 @@
       <aside class="sidebar">
 
         <div class="discount-offer">
-          <h3 class="blue-text underline">Discont Offer</h3>
-          <div class="grey-text"><input type="checkbox" /> 20% Cashback</div>
+          <h3 class="blue-text underline">Discount Offer</h3>
+          <div class="grey-text"><input checked type="checkbox" (change)="filterCall('discount',20)" /> 20% Discount</div>
           <div class="grey-text">
-            <input type="checkbox" /> 5% Cashback Offer
+            <input checked type="checkbox" (change)="filterCall('discount',5)" /> 5% Discount Offer
           </div>
           <div class="grey-text">
-            <input type="checkbox" /> 25% Discount Offer
+            <input checked type="checkbox" (change)="filterCall('discount',25)" /> 25% Discount Offer
           </div>
         </div>
 
         <div class="rating-item">
           <h3 class="blue-text underline">Rating Item</h3>
           <div>
-            <input type="checkbox" />
+            <input checked type="checkbox" (change)="filterCall('rating',4)" />
             <i class="fas fa-star yellow"></i>
             <i class="fas fa-star yellow"></i>
             <i class="fas fa-star yellow"></i>
             <i class="fas fa-star yellow"></i>
-            <i class="fas fa-star grey-text"></i> (2341)
+            <i class="fas fa-star grey-text"></i>
           </div>
           <div>
-            <input type="checkbox" />
+            <input checked type="checkbox" (change)="filterCall('rating',3)" />
             <i class="fas fa-star yellow"></i>
             <i class="fas fa-star yellow"></i>
             <i class="fas fa-star yellow"></i>
             <i class="fas fa-star grey-text"></i>
-            <i class="fas fa-star grey-text"></i> (1726)
+            <i class="fas fa-star grey-text"></i>
           </div>
           <div>
-            <input type="checkbox" />
+            <input checked type="checkbox" (change)="filterCall('rating',2)" />
             <i class="fas fa-star yellow"></i>
             <i class="fas fa-star yellow"></i>
             <i class="fas fa-star grey-text"></i>
             <i class="fas fa-star grey-text"></i>
-            <i class="fas fa-star grey-text"></i> (258)
+            <i class="fas fa-star grey-text"></i>
           </div>
           <div>
-            <input type="checkbox" />
-            <i class="fas fa-star yellow"></i>
+            <input checked type="checkbox" (change)="filterCall('rating',1)" />
             <i class="fas fa-star yellow"></i>
             <i class="fas fa-star grey-text"></i>
             <i class="fas fa-star grey-text"></i>
-            <i class="fas fa-star grey-text"></i> (25)
+            <i class="fas fa-star grey-text"></i>
+            <i class="fas fa-star grey-text"></i>
           </div>
         </div>
 
         <div class="categories">
           <h3 class="blue-text underline">Categories</h3>
           <div *ngFor="let cat of categories">
-            <input type="checkbox" /> {{cat}}</div>
+            <input type="checkbox" checked (change)="filterCallCategory(cat)" /> {{cat}}</div>
         </div>
 
         <div class="price-filter">
           <h3 class="blue-text underline">Price Filter</h3>
-          <div><input type="checkbox" /> $0.00 - $150.00</div>
-          <div><input type="checkbox" /> $150.00 - $350.00</div>
-          <div><input type="checkbox" /> $150.00 - $504.00</div>
-          <div><input type="checkbox" /> $450.00 +</div>
+          <div><input type="checkbox" checked (change)="filterCall('price',1)" /> $0.00 - $150.00</div>
+          <div><input type="checkbox" checked (change)="filterCall('price',2)" /> $150.00 - $350.00</div>
+          <div><input type="checkbox" checked (change)="filterCall('price',3)" /> $350.00 - $500.00</div>
+          <div><input type="checkbox" checked (change)="filterCall('price',4)" /> $500.00 +</div>
         </div>
       </aside>
 

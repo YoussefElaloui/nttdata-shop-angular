@@ -1,0 +1,167 @@
+.demo-body {
+  margin: 2em 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2em;
+}
+
+.hekto-demo-page p {
+  font-size: 14px;
+  padding: .5em 0;
+}
+
+.hekto-demo-page a {
+  color: #00000079;
+}
+
+.hekto-demo-page a:hover {
+  color: #fb2e86;
+}
+
+.hekto-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.hekto-demo-page .two-col {
+  display: flex;
+  gap: 2em;
+}
+
+.hekto-demo-page .contact-information {
+  background-color: #f1f0ff;
+  border-radius: 5px;
+  padding: 2em;
+  width: 69%;
+}
+
+.calculate {
+  background-color: #f1f0ff;
+  padding: 1em;
+  border-radius: 5px;
+}
+
+.hekto-demo-page .contact-information button {
+  margin-top: 4em;
+}
+
+.hekto-demo-page .contact-information > div:first-child {
+  padding-bottom: 3em;
+}
+
+.hekto-demo-page input[type="text"],
+.calculate input[type="text"] {
+  display: block;
+  width: 100%;
+  padding: 1em;
+  border: 0;
+  border-bottom: 1px solid #00000018;
+  background-color: transparent;
+  margin: 2em 0;
+  outline: none;
+}
+
+.hekto-sidebar {
+  width: 27%;
+}
+
+.hekto-sidebar img {
+  width: 70px;
+  height: 70px;
+}
+
+.demo-related-products > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #00000018;
+  padding: 5px 0;
+}
+
+.demo-related-products > div .details {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+}
+
+.checkout {
+  background-color: #f1f0ff;
+  padding: 2em 1.5em;
+  margin-top: 30px;
+  border-radius: 5px;
+}
+
+.checkout > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid #00000018;
+}
+
+.checkout form {
+  font-size: 12px;
+  padding: 20px 0;
+}
+
+/* Shopping Cart */
+.shopping-cart .cart-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.shopping-cart .cart-list img
+{
+  width: 70px;
+  height: 70%;
+
+}
+
+.shopping-cart .cart-list .first-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid #00000018;
+}
+
+.details {
+  display: flex;
+  gap: 1em;
+}
+
+table {
+  border-collapse: separate;
+  border-spacing: 2rem 1.5rem;
+  text-align: left;
+  font-size: 12px;
+}
+
+table h3 {
+  font-size: 16px;
+}
+
+
+.cart-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3em;
+}
+
+@media (max-width: 968px) {
+  .hekto-demo-page .contact-information {
+      width: 100%;
+      padding: 15px;
+  }
+
+  .hekto-demo-page .hekto-sidebar {
+      width: 100%;
+  }
+}
+
+.cart-image{
+  width: 83px;
+  height:87px;
+}
