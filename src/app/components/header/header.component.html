@@ -16,8 +16,18 @@
 
           <!-- Left nav -->
           <div class="left-nav">
-              <a href="#">English <img src="assets/img/akar-icons_chevron-down2.svg" alt=""></a>
-              <a href="#">USD <img src="assets/img/akar-icons_chevron-down2.svg" alt=""></a>
+              <!-- <a href="#">English <img src="assets/img/akar-icons_chevron-down2.svg" alt=""></a> -->
+              <select name="" id="">
+                <option>English</option>
+                <option>French</option>
+                <option>Arabic</option>
+              </select>
+              <!-- <a href="#">USD <img src="assets/img/akar-icons_chevron-down2.svg" alt=""></a> -->
+              <select>
+                <option>USD</option>
+                <option>EURO</option>
+                <option>DH</option>
+              </select>
               <a *ngIf="!isLogin" [routerLink]="['/login']">Login <img src="assets/img/carbon_user.svg" alt=""></a>
               <a [routerLink]="['/cart']" *ngIf="isLogin"><img src="assets/img/fluent_cart-24-regular.svg" alt=""></a>
           </div>
@@ -32,15 +42,14 @@
           <div class="logo"><h1>NTT STORE</h1></div>
           <div class="nav-items">
               <a href="./index.html" id="active">Home</a>
-              <a [routerLink]="['about-us']">About Us</a>
-              <a href="#">Products</a>
-              <a href="./blog page.html">Blog</a>
               <a [routerLink]="['shop']">Shop</a>
-              <a href="./contact us.html">Contact</a>
+              <a [routerLink]="['about-us']">About Us</a>
+              <a [routerLink]="['contact-us']">Contact</a>
+              <a [routerLink]="['faq']">FAQ</a>
           </div>
           <form class="search-input">
-              <input type="text">
-              <button><img src="assets/img/uil_search.png" alt=""></button>
+              <input [(ngModel)]="search" [ngModelOptions]="{standalone:true}" type="text">
+              <button [routerLink]="['/shop']" [queryParams]="{search}"><img src="assets/img/uil_search.png" alt=""></button>
           </form>
 
 
@@ -50,10 +59,8 @@
               <div class="menu">
                   <a href="./index.html" id="active">Home</a>
                   <a [routerLink]="['about-us']">About Us</a>
-                  <a href="#">Products</a>
-                  <a href="./blog page.html">Blog</a>
                   <a [routerLink]="['shop']">Shop</a>
-                  <a href="./contact us.html">Contact</a>
+                  <a [routerLink]="['contact-us']">Contact</a>
                   <a  *ngIf="!isLogin" [routerLink]="['/login']">Login</a>
               </div>
           </div>

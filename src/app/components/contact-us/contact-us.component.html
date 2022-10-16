@@ -1,0 +1,70 @@
+<app-hero title="Contact Us"></app-hero>
+
+<section class="contact-page">
+  <div class="container">
+      <div class="first-row">
+          <div class="information-about-us">
+              <h2 class="blue-text">Information About us</h2>
+              <p class="grey-text">NTT STORE is one of the world most popular E-Shop, selling the most popular products with the latest models</p>
+              <div>
+                  <img src="assets/img/contact us/Ellipse 44.png" alt="">
+                  <img src="assets/img/contact us/Ellipse 45.png" alt="">
+                  <img src="assets/img/contact us/Ellipse 46.png" alt="">
+              </div>
+          </div>
+
+          <div class="contact-way">
+              <h2 class="blue-text">Contact Way</h2>
+              <div class="contact-way-list">
+                  <div>
+                      <img src="assets/img/contact us/Ellipse 44.png" alt="">
+                      <div>
+                          <p class="grey-text">Tel: 06-22-81-09-65</p>
+                          <p class="grey-text">E-Mail: shop@ntt-store.com</p>
+                      </div>
+                  </div>
+                  <div>
+                      <img src="assets/img/contact us/Ellipse 45.png" alt="">
+                      <div>
+                          <p class="grey-text">Support Forum</p>
+                          <p class="grey-text">For over 24hr</p>
+                      </div>
+                  </div>
+                  <div>
+                      <img src="assets/img/contact us/Ellipse 46.png" alt="">
+                      <div>
+                          <p class="grey-text">Offshoring, Tetouan</p>
+                          <p class="grey-text">Morocco, 3NM98-LK</p>
+                      </div>
+                  </div>
+                  <div>
+                      <img src="assets/img/contact us/Ellipse 47.png" alt="">
+                      <div>
+                          <p class="grey-text">Free standard shipping</p>
+                          <p class="grey-text">on all oders.</p>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div class="second-row">
+          <div class="get-in-touch">
+              <h2 class="blue-text">Get In Touch</h2>
+              <p class="grey-text">Fell free to contact us any time you need</p>
+              <div class="login-form">
+                  <form [formGroup]="form" (submit)="submit()">
+                      <div class="name-and-email">
+                          <input type="text" placeholder="Your Name*" formControlName="name">
+                          <input type="email" placeholder="Your E-mail" formControlName="email">
+                      </div>
+                      <input type="text" placeholder="Subject*" formControlName="subject">
+                      <textarea cols="30" rows="10" formControlName="message">Type Your Message*</textarea>
+                      <button type="submit">Send Mail</button>
+                  </form>
+              </div>
+          </div>
+
+          <img src="assets/img/contact us/Group 124.svg" alt="">
+      </div>
+  </div>
+</section>

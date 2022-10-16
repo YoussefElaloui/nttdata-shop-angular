@@ -2,6 +2,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { Product } from 'src/app/interfaces/product.interface';
+import { CartService } from 'src/app/services/cart.service';
 import { ProductService } from 'src/app/services/product.service';
 
 @Component({
@@ -19,7 +20,10 @@ export class HomeComponent implements OnDestroy {
   leatestProds: Product[]=[];
   categoryProds:Product[]=[];
   cats:string[] = ['smartphones','furniture','automotive','womens-dresses'];
-  constructor(private productService: ProductService,private router:Router) {
+  constructor(
+    private productService: ProductService,
+    private router:Router,
+    private cartService: CartService) {
     this.productSub= productService.getProducts(9).subscribe(res=>{this.productList=res.products;
     });
     this.leatest('best');
@@ -51,4 +55,48 @@ export class HomeComponent implements OnDestroy {
     this.router.navigateByUrl(`/product/${product.id}`,{state:{product:JSON.stringify(product)}})
   }
 
+  addToCart(product: Product): void {
+    let cart = this.cartService.getCart();
+    if (cart) {
+      cart.products.push({
+        id: product.id,
+        title: product.title,
+        price:
+          product.price + (product.price * product.discountPercentage) / 100,
+        discountPercentage: product.discountPercentage,
+        quantity: 1,
+        thumbnail: product.thumbnail,
+        total: product.price,
+        discountedPrice: product.price,
+      });
+      cart.total += product.price;
+      cart.totalProducts += 1;
+      cart.totalQuantity += 1;
+    } else {
+      cart = {
+        id: 9001,
+        discountedTotal: 1,
+        total: product.price,
+        totalProducts: 1,
+        totalQuantity: 1,
+        userId: -1,
+        products: [
+          {
+            id: product.id,
+            title: product.title,
+            price:
+              product.price +
+              (product.price * product.discountPercentage) / 100,
+            discountPercentage: product.discountPercentage,
+            quantity: 1,
+            thumbnail: product.thumbnail,
+            total: product.price,
+            discountedPrice: product.price,
+          },
+        ],
+      };
+    }
+    this.cartService.setCart(cart);
+    this.router.navigateByUrl('/cart');
+  }
 }

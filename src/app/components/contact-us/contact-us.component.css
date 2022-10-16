@@ -1,0 +1,76 @@
+/* contact Us page */
+section.contact-page .first-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2em;
+}
+
+h2 {
+  padding-bottom: 1em;
+}
+
+p {
+  font-size: 14px;
+}
+
+section.contact-page .first-row > div {
+  width: 47%;
+}
+
+section.contact-page .information-about-us img{
+  width: 20px;
+  height: 20px;
+}
+
+section.contact-page .information-about-us > p {
+  padding: 10px 0;
+}
+
+.contact-way img{
+  width: 35px;
+  height: 35px;
+}
+.contact-way .contact-way-list {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20px 0;
+  gap: 2em;
+}
+
+.contact-way .contact-way-list > div {
+  display: flex;
+  gap: .5em;
+}
+
+.second-row {
+  display: flex;
+  padding: 3em 0;
+  flex-wrap: wrap;
+  gap: 2em;
+}
+
+.second-row > * {
+  width: 45%;
+}
+
+.second-row .name-and-email {
+  display: flex;
+  gap: 2em;
+}
+
+.second-row input {
+  margin: 1em 0;
+}
+
+.second-row textarea {
+  width: 100%;
+  padding: 1em;
+  color: #00000079;
+}
+
+@media (max-width: 968px) {
+  section.contact-page .first-row > div,
+  .second-row > * {
+      width: 100%;
+  }
+}

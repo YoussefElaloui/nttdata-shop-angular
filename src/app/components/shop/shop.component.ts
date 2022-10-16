@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { Product } from 'src/app/interfaces/product.interface';
 import { ProductService } from 'src/app/services/product.service';
@@ -24,23 +24,50 @@ export class ShopComponent implements OnInit, OnDestroy {
 
   productSub: Subscription | undefined;
   categorySub: Subscription | undefined;
+  activatedRouteSub: Subscription | undefined;
 
   discount: number[] = [5, 20, 25];
   rating: number[] = [1, 2, 3, 4, 5];
   categoryFilter: string[] = [];
   prices: number[] = [1, 2, 3, 4];
 
-  constructor(private productService: ProductService, private router: Router) {}
+  constructor(
+    private productService: ProductService,
+    private router: Router,
+    private activatedRoute: ActivatedRoute
+  ) {}
 
   ngOnInit(): void {
     this.getProductsFromApi();
     this.categorySub = this.productService.getCategories().subscribe((res) => {
       this.categories = res;
       this.categoryFilter = [...this.categories];
+      this.activatedRoute.queryParamMap.subscribe((res) => {
+        let search = res.get('search');
+        console.log(search);
+
+        if (search) {
+          search=search.toLowerCase();
+          this.resetProductsFiltered();
+
+          this.productsFiltered = this.productsFiltered.filter(
+            (r) =>
+              r.title.toLowerCase().includes(search!) ||
+              r.description.toLowerCase().includes(search!) ||
+              r.category.toLowerCase().includes(search!)
+          );
+          this.getProducts(1);
+        } else if(search?.length==0) {
+          this.resetProductsFiltered();
+          this.getProducts(1);
+        }
+      });
     });
   }
   ngOnDestroy(): void {
     this.productSub?.unsubscribe();
+    this.categorySub?.unsubscribe();
+    this.activatedRouteSub?.unsubscribe();
   }
 
   switchLayout(toList: boolean): void {
@@ -133,13 +160,13 @@ export class ShopComponent implements OnInit, OnDestroy {
       if (this.prices.includes(1))
         temp = [...temp, ...ps.filter((p) => p.price <= 150)];
       if (this.prices.includes(2))
-        temp = [...temp, ...ps.filter((p) => p.price > 150 && p.price<=350)];
+        temp = [...temp, ...ps.filter((p) => p.price > 150 && p.price <= 350)];
       if (this.prices.includes(3))
-        temp = [...temp, ...ps.filter((p) => p.price > 350 && p.price<=500)];
+        temp = [...temp, ...ps.filter((p) => p.price > 350 && p.price <= 500)];
       if (this.prices.includes(4))
         temp = [...temp, ...ps.filter((p) => p.price > 500)];
-      ps=[...temp];
-      temp=[];
+      ps = [...temp];
+      temp = [];
     } else ps = [];
 
     this.productsFiltered = ps;

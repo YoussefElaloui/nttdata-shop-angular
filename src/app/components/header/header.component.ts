@@ -12,6 +12,7 @@ export class HeaderComponent implements OnInit {
   user:User|null=null;
   isLogin:boolean=false;
 
+  search:string='';
 
   constructor(
     private tokenService: TokinStorageService

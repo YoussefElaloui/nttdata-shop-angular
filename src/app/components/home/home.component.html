@@ -129,7 +129,7 @@
                   </div>
               </div>
               <form>
-                  <button class="primary-btn"><a href="./shoping cart.html">Add To Cart</a></button>
+                  <button (click)="addToCart(productList[4])" class="primary-btn">Add To Cart</button>
                   <div>
                       <h5 class="blue-text">{{productList[4].title}}</h5>
                       <p class="blue-text">${{productList[4].price}}</p>

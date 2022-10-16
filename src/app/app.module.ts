@@ -13,9 +13,12 @@ import { HeroComponent } from './components/hero/hero.component';
 import { AboutUsComponent } from './components/about-us/about-us.component';
 import { DetailsComponent } from './components/details/details.component';
 import { ShopComponent } from './components/shop/shop.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './components/login/login.component';
 import { CartComponent } from './components/cart/cart.component';
+import { OrderCompletedComponent } from './components/order-completed/order-completed.component';
+import { ContactUsComponent } from './components/contact-us/contact-us.component';
+import { FaqComponent } from './components/faq/faq.component';
 
 @NgModule({
   declarations: [
@@ -30,13 +33,17 @@ import { CartComponent } from './components/cart/cart.component';
     DetailsComponent,
     ShopComponent,
     LoginComponent,
-    CartComponent
+    CartComponent,
+    OrderCompletedComponent,
+    ContactUsComponent,
+    FaqComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
